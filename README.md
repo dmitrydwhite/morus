@@ -1,7 +1,6 @@
-![Morus Logo](https://github.com/dmitrydwhite/morus/blob/master/morus_square.png?raw=true)
-# Morus
-### version 0.0.1
-#### by Dmitry White
+![Morus Logo](https://github.com/dmitrydwhite/morus/blob/master/icons/apple-icon-180x180.png?raw=true) # Morus
+#### version 0.0.1
+by Dmitry White
 
 ## What it is
 Morus is a custom-designed interface specifically to connect a USB HID scale with a browser.
