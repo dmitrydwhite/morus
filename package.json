@@ -20,5 +20,13 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/dmitrydwhite/morus/issues"
+  },
+  "dependencies": {
+    "node-hid": "^0.4.0",
+    "ws": "^0.7.2"
+  },
+  "devDependencies": {
+    "node-hid": "^0.4.0",
+    "ws": "^0.7.2"
   }
 }
