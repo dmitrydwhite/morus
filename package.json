@@ -1,0 +1,24 @@
+{
+  "name": "morus-reader",
+  "version": "0.0.1",
+  "description": "A custom reader for a USB-HID scale to send the scale data to the browser",
+  "main": "./exec/socketServer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dmitrydwhite/morus.git"
+  },
+  "keywords": [
+    "morus",
+    "usb",
+    "hid",
+    "scale"
+  ],
+  "author": "dmitrydwhite",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dmitrydwhite/morus/issues"
+  }
+}
