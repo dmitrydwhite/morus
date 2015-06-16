@@ -12,22 +12,26 @@ var morusReader = {
       if (device.vendorId.toString() === vendorId &&
           device.productId.toString() === productId) {
         morusReader.scale = new HID.HID(device.path);
-        console.log('found', device);
       }
     });
     
     if (morusReader.scale) {
-      morusReader.listenForWeight();
+      morusReader.foundScale(morusReader.scale);
     } else {
       morusReader.couldntFindScale();
     }
+  },
 
+  foundScale: function (device) {
+    morusReader.tell('found %s:%s', device.path,device.manufacturer);
+    morusReader.listenForWeight();
   },
 
   listenForWeight: function () {
     morusReader.scale.on('data', function (data) {
-      console.log(data);
-      morusReader.connection.send(data);
+      var scotch = JSON.stringify(data);
+      console.log(scotch);
+      morusReader.connection.send(scotch);
     });
   },
 
