@@ -1,4 +1,4 @@
-![alt text](./morus_square.jpg "Logo Title Text 1")
+![alt text](./morus_square.jpg, "Morus Logo")
 # Morus
 ### version 0.0.1
 #### by Dmitry White
