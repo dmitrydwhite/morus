@@ -1,4 +1,4 @@
-![alt text](./morus_square.jpg, "Morus Logo")
+![Morus Logo](https://github.com/dmitrydwhite/morus/blob/master/morus_square.png?raw=true)
 # Morus
 ### version 0.0.1
 #### by Dmitry White
