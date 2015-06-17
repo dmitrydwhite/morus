@@ -18,12 +18,8 @@ v 0.0.1:
 
 ---
 ### Other cool things
-* Run 
+* In the command line, run 
 ```
     node ./dev/deviceHelper.js
 ```
 in order to get a list of all the USB HID's connected to the system.
-
-
-
-

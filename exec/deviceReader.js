@@ -7,6 +7,7 @@ var morusReader = {
     var devices = HID.devices();
 
     morusReader.connection = socket ? socket : null;
+    morusReader.tare = '';
 
     devices.forEach(function (device) {
       if (device.vendorId.toString() === vendorId &&
@@ -30,13 +31,16 @@ var morusReader = {
   listenForWeight: function () {
     morusReader.scale.on('data', function (data) {
       var scotch = JSON.stringify(data);
-      console.log(scotch);
-      morusReader.connection.send(scotch);
+      if (scotch !== morusReader.tare) {
+        morusReader.tare = scotch;
+        morusReader.tell(scotch);
+      }
     });
   },
 
   couldntFindScale: function () {
     morusReader.tell('Couldn\'t find anticipated scale');
+    morusReader.connection.close();
   },
 
   tell: function (message) {
