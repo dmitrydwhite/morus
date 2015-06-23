@@ -24,16 +24,16 @@ var morusReader = {
   },
 
   foundScale: function (device) {
-    morusReader.tell('found %s:%s', device.path,device.manufacturer);
+    morusReader.tell('Found Device');
     morusReader.listenForWeight();
   },
 
   listenForWeight: function () {
     morusReader.scale.on('data', function (data) {
-      var scotch = JSON.stringify(data);
-      if (scotch !== morusReader.tare) {
-        morusReader.tare = scotch;
-        morusReader.tell(scotch);
+      var newWeight = JSON.stringify(data);
+      if (newWeight !== morusReader.tare) {
+        morusReader.tare = newWeight;
+        morusReader.tell(newWeight);
       }
     });
   },
