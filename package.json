@@ -1,6 +1,6 @@
 {
   "name": "morus-reader",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A custom reader for a USB-HID scale to send the scale data to the browser",
   "main": "./exec/socketServer.js",
   "scripts": {
