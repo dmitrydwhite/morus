@@ -25,8 +25,8 @@
           break;
       }
       
-      document.getElementsByClassName('morus-weight').innerHTML = scaleWeight;
-      document.getElementsByClassName('.morus-units').innerHTML = units;
+      $('.morus-weight').text(scaleWeight);
+      $('.morus-units').text(units);
 
       console.log(realArray); // This is an array of strings.  Index 4 is the weight in tenths of lbs.
     };
