@@ -10,19 +10,12 @@
       var unitByte = realArray[1];
       var units = '';
 
-      switch (unitByte) {
-        case 2: 
-          units = 'NA';
-          break;
-        case 3: 
-          units = 'lbs.';
-          break;
-        case 4: 
-          units = 'kg.';
-          break;
-        default: 
-          units = 'NA';
-          break;
+      if (unitByte === 3) {
+        units = 'lbs.';
+      } else if (unitByte === 4) {
+        units = 'kg.';        
+      } else {
+        units = 'NA'
       }
       
       $('.morus-weight').text(scaleWeight);
