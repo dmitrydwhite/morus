@@ -2,24 +2,38 @@ var HID = require('node-hid');
 
 var morusReader = {
 
+  suspended: false,
+
   start: function (vendorId, productId, socket) {
     var _self = this;
     var devices = HID.devices();
 
-    morusReader.connection = socket ? socket : null;
-    morusReader.tare = '';
+    if (!morusReader.suspended) {
+      morusReader.connection = socket ? socket : null;
+      morusReader.tare = '';
 
-    devices.forEach(function (device) {
-      if (device.vendorId.toString() === vendorId &&
-          device.productId.toString() === productId) {
-        morusReader.scale = new HID.HID(device.path);
-      }
-    });
-    
-    if (morusReader.scale) {
-      morusReader.foundScale(morusReader.scale);
+      devices.forEach(function (device) {
+        if (device.vendorId.toString() === vendorId &&
+            device.productId.toString() === productId) {
+          morusReader.scale = new HID.HID(device.path);
+        }
+      });
+      
+      if (morusReader.scale) {
+        morusReader.foundScale(morusReader.scale);
+      } else {
+        morusReader.couldntFindScale();
+      }      
     } else {
-      morusReader.couldntFindScale();
+      morusReader.suspended = false;
+      morusReader.connection = socket ? socket : null;
+      morusReader.foundScale(morusReader.scale);
+    }
+  },
+
+  suspend: function () {
+    if (!morusReader.suspended) {
+      morusReader.suspended = true;
     }
   },
 
@@ -45,7 +59,7 @@ var morusReader = {
 
   tell: function (message) {
     console.log(message);
-    morusReader.connection.send(message);
+    if (!morusReader.suspended) morusReader.connection.send(message);
   },
 
   terminate: function () {
