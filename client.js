@@ -17,6 +17,10 @@
       } else {
         units = 'NA'
       }
+
+      if (scaleWeight == NaN) {
+        scaleWeight = 'ØØ'
+      }
       
       $('.morus-weight').text(scaleWeight);
       $('.morus-units').text(units);
