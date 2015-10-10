@@ -9,6 +9,8 @@
       var scaleWeight = parseInt(realArray[4]) / 10;
       var unitByte = realArray[1];
       var units = '';
+      var Mweight = document.getElementsByClassName('morus-weight')[0]
+      var Munits = document.getElementsByClassName('morus-units')[0]
 
       if (unitByte === 3) {
         units = 'lbs.';
@@ -22,8 +24,15 @@
         scaleWeight = 'ØØ'
       }
       
-      $('.morus-weight').text(scaleWeight);
-      $('.morus-units').text(units);
+      // $('.morus-weight').text(scaleWeight);
+      // $('.morus-units').text(units);
+      if (Mweight) {
+        Mweight.value = scaleWeight
+      }
+
+      if (Munits) {
+        Munits.value = units
+      }
 
       console.log(realArray); // This is an array of strings.  Index 4 is the weight in tenths of lbs.
     };
