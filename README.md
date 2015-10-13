@@ -1,7 +1,7 @@
 # Morus
 ![Morus Logo](https://github.com/dmitrydwhite/morus/blob/master/icons/apple-icon-180x180.png?raw=true)
 ---
-#### version 0.0.3
+#### version 0.1.1
 by Dmitry White
 
 ### What it is
