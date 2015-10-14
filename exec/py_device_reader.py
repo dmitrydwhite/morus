@@ -39,9 +39,11 @@ class Morus_Reader():
     print(data)
     self.connection.write_message(data)
 
-  def resume(self):
+  def resume(self, connection):
     if self.suspended:
       self.suspended = False
+      if connection != self.connection:
+        self.connection = connection
 
   def found_scale(self):
     # broadcast the goodnews and begin listening
@@ -79,12 +81,21 @@ class ScaleSocketHandler(tornado.websocket.WebSocketHandler):
         return True
   
     def open(self):
-        print('M.O.R.U.S')
-        reader = Morus_Reader()
-        reader.start(2338, 32775, self)
-      
+              
+        if not reader.suspended:
+          print('M.O.R.U.S')
+          
+          reader.start(2338, 32775, self)
+        else:
+          print('M.O.R.U.S resuming...')
+          reader.resume(self)
+
+    def on_close(self):
+        print('m.o.r.u.s connection closing')
+        reader.suspend()
 
 if __name__ == '__main__':
+    reader = Morus_Reader()
     app = tornado.web.Application([
       (r'/', ScaleSocketHandler),     
     ])
