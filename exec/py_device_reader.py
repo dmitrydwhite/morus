@@ -1,3 +1,6 @@
+import tornado.ioloop
+import tornado.websocket
+from tornado.options import define, options, parse_command_line
 import pywinusb
 import pywinusb.hid as HID
 
@@ -69,11 +72,6 @@ class Morus_Reader():
   def terminate(self):
     # broadcast termination message and close the websocket connection
     print('terminating')
-
-import tornado.ioloop
-import tornado.websocket
-
-from tornado.options import define, options, parse_command_line
 
 define("port", default=3000, help="run on the given port", type=int)
 
