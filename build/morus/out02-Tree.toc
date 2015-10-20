@@ -1,0 +1,12 @@
+('c:\\python27\\lib\\site-packages\\certifi-2015.9.6.2-py2.7.egg',
+ None,
+ set(['*.py', '*.pyc', '*.pyd', '*.pyo', '*.so', 'EGG-INFO']),
+ [('certifi\\cacert.pem',
+   'c:\\python27\\lib\\site-packages\\certifi-2015.9.6.2-py2.7.egg\\certifi\\cacert.pem',
+   'DATA'),
+  ('certifi\\old_root.pem',
+   'c:\\python27\\lib\\site-packages\\certifi-2015.9.6.2-py2.7.egg\\certifi\\old_root.pem',
+   'DATA'),
+  ('certifi\\weak.pem',
+   'c:\\python27\\lib\\site-packages\\certifi-2015.9.6.2-py2.7.egg\\certifi\\weak.pem',
+   'DATA')])
