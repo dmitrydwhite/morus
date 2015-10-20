@@ -1,3 +1,4 @@
+import pywinusb
 import pywinusb.hid as HID
 
 class Morus_Reader():
