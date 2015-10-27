@@ -16,7 +16,7 @@ v 0.1.0:
 ```
 * In the markup of your web-page, include this script tag in the page head:
 ```
-    <script type="text/javascript" src="https://rawgit.com/dmitrydwhite/morus/master/client.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/dmitrydwhite/morus/master/client_min.js"></script>
 ```
 
 ---
