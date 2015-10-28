@@ -19,7 +19,7 @@
         units = 'NA';
       }
 
-      if (isNan(scaleWeight)) {
+      if (scaleWeight === NaN) {
         scaleWeight = 'Ee';
       }
 
