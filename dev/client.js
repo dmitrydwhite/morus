@@ -6,7 +6,7 @@
     Window.morus.onmessage = function (data) {
       var realArray = data ? JSON.parse(data.data) : [];
       var twentyFives = parseInt(realArray[5]);
-      var scaleWeight = (parseInt(realArray[4]) / 10) + (twentyFives * 25);
+      var scaleWeight = (parseInt(realArray[4]) / 10) + (twentyFives * 25.6);
       var unitByte = realArray[2];
       var units = '';
       var Mweight = document.getElementsByClassName('morus-weight')[0];
@@ -21,12 +21,12 @@
       }
 
       if (scaleWeight === NaN) {
-        scaleWeight = 'Ee';
+        scaleWeight = 0;
       }
 
       if (Mweight) {
         Mweight.value = scaleWeight;
-        Mweight.innerHTML = scaleWeight;
+        Mweight.innerHTML = scaleWeight.toFixed(1);
       }
 
       if (Munits) {
