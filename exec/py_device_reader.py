@@ -116,7 +116,10 @@ if __name__ == '__main__':
     reader = Morus_Reader()
     app = tornado.web.Application([
       (r'/', ScaleSocketHandler),     
-    ])
+    ],ssl_options={
+      'certfile': 'cert.pem',
+      'keyfile': 'key.pem'
+    })
     app.listen(options.port)
     tornado.ioloop.IOLoop.instance().start()
     
